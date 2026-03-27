@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/LarEmDia.Core/">
+    <Project Path="LarEmDia.Application/LarEmDia.Application.csproj" Id="170a6647-1d9e-4452-af45-753840cd975d" />
+    <Project Path="LarEmDia.Domain/LarEmDia.Domain.csproj" Id="ce35932e-aa61-4deb-b702-3c37d83e8a21" />
+  </Folder>
+  <Folder Name="/LarEmDia.Infrastructure/">
+    <Project Path="LarEmDia.Infrastructure/LarEmDia.Infrastructure.csproj" Id="738170c5-28ed-4b25-8ab0-eeb36448ce46" />
+  </Folder>
+  <Folder Name="/LarEmDia.Presentation/">
+    <Project Path="LarEmDiaWebApi/LarEmDiaWebApi.csproj" />
+  </Folder>
+</Solution>
