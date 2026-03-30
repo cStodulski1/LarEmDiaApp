@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu, theme } from 'antd';
-import { FolderAddOutlined, HomeFilled, SwapOutlined, UserOutlined } from '@ant-design/icons';
+import { FolderAddOutlined, HomeFilled, LaptopOutlined, SwapOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
 const { Header: AntdHeader } = Layout;
@@ -55,7 +55,6 @@ export function Header(): React.ReactElement {
             key: '3',
             icon: <FolderAddOutlined />,
             label: 'Categoria',
-            onClick: () => navigate('/CadastroCategoria'),
             children: [
               {
                 key: '3.1',
@@ -74,6 +73,12 @@ export function Header(): React.ReactElement {
             icon: <SwapOutlined />,
             label: 'Transacao',
             onClick: () => navigate('/CadastroTransacao')
+            },
+            {
+            key: '5',
+            icon: <LaptopOutlined />,
+            label: 'Relatorios',
+            onClick: () => navigate('/ListagemTotaisPessoas')
             }
         ]}
         style={{ flex: 1, minWidth: 0, lineHeight: '64px' }}

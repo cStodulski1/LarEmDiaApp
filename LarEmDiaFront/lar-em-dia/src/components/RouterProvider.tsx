@@ -7,6 +7,7 @@ import { CadastroTransacao } from '../pages/Transacao/CadastroTransacao';
 import App from '../App';
 import ListagemPessoa from '../pages/Pessoa/ListagemPessoa';
 import ListagemCategoria from '../pages/Categoria/ListagemCategoria';
+import ListagemTotaisPessoas from '../pages/Relatorio/ListagemTotaisPessoas';
 
 const MainContent: React.FC = () => {
   return (
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
                     { path: '/CadastroCategoria', element: <CadastroCategoria /> },
                     { path: '/ListagemCategoria', element: <ListagemCategoria /> },
                     { path: '/CadastroTransacao', element: <CadastroTransacao /> },
+                    { path: '/ListagemTotaisPessoas', element: <ListagemTotaisPessoas /> },
                     { path: '*', element: <ErrorPage /> },
                 ]
             }

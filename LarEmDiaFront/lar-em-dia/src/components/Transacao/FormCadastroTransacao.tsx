@@ -72,7 +72,7 @@ export const FormCadastroTransacao: React.FC = () => {
         {
             required: true,
             validator: async (_, value) => {
-                const pessoaId = form.getFieldValue('pessoa');
+                const pessoaId = form.getFieldValue('pessoaId');
                 const pessoa = pessoasRef.current.find((p) => p.id === pessoaId);
 
                 if (value === 'Receita' && pessoa && pessoa.idade < 18) {

@@ -1,11 +1,11 @@
-import ListaCategoria from "../../components/Categoria/ListaCategoria";
+import { TableCategoria } from "../../components/Categoria/TableCategoria";
 
 const ListagemCategoria = () => {
     return (
         <>
             <div>
                 <h1>Lista de categorias</h1>
-                <ListaCategoria/>
+                <TableCategoria/>
             </div>
         </>
     )

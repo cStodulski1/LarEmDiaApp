@@ -10,8 +10,9 @@ namespace LarEmDia.Infrastructure.Interfaces
     {
         public Task AdicionarAsync(Transacao transacao);
         public Task<Transacao> BuscarPorIdAsync(Guid id);
-        public Task<PagedResult<Transacao>> BuscarCategoriaPorDescricao(string descricao, PaginationParameters paginationParameters);
-        public Task AtualizarAsync(Transacao transacaoAtualizada);
-        public Task DeletarPorId(Guid id);
+        public Task<PagedResult<Transacao>> BuscarPorPessoaIdAsync(Guid pessoaId, PaginationParameters paginationParameters);
+        public Task<IReadOnlyList<Transacao>> BuscarTodasAsTransacoesPorPessoaIdAsycn(Guid pessoaId);
+        public decimal BuscarTotalReceita();
+        public decimal BuscarTotalDespesas();
     }
 }

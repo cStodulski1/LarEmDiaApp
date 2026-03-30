@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Button, Input, Popconfirm, Space, Table } from 'antd';
+import { Input, Select, Space, Table } from 'antd';
 import type { TablePaginationConfig, TableProps } from 'antd';
 import type { PagedResult } from '../../models/PagedResult';
 import { SearchOutlined } from '@ant-design/icons';
@@ -33,7 +33,7 @@ export const TableCategoria: React.FC = () => {
 
   const columns: TableProps<Categoria>['columns'] = [
     { 
-      title: 'Id', dataIndex: 'id', key: 'id',
+      title: 'Id', dataIndex: 'categoriaId', key: 'id',
       width: 240,
       ellipsis: true,
       render: (id) => (
@@ -59,15 +59,32 @@ export const TableCategoria: React.FC = () => {
     setCurrent(1);
   }
 
+  const handleFinalidadeChange = (value:  string) => {
+    setFinalidade(value);
+    setCurrent(1);
+  }
+
   return (
    <Space orientation='vertical' style={{ width: '100%'}}>
-      <Input
-        placeholder="Pesquisar por nome"
-        prefix={<SearchOutlined/>}
-        allowClear
-        onChange={(e) => handleSearch(e.target.value)}
-        style={{maxWidth: 320}}
-      />
+      <Space>
+        <Input
+          placeholder="Pesquisar por descrição"
+          prefix={<SearchOutlined />}
+          allowClear
+          onChange={(e) => handleSearch(e.target.value)}
+          style={{ width: 320 }}
+        />
+        <Select
+          value={finalidade}
+          onChange={handleFinalidadeChange}
+          style={{ width: 160 }}
+          options={[
+            { value: 'Ambas', label: 'Ambas' },
+            { value: 'Despesa', label: 'Despesa' },
+            { value: 'Receita', label: 'Receita' },
+          ]}
+        />
+      </Space>
       <Table
         columns={columns}
         dataSource={result?.data ?? []}
@@ -78,7 +95,8 @@ export const TableCategoria: React.FC = () => {
           current: result?.metadata.currentPage ?? current,
           pageSize: result?.metadata.pageSize ?? pageSize,
           total: result?.metadata.totalCount ?? 0,
-          showSizeChanger: true,}}
+          showSizeChanger: true
+        }}
       />
    </Space>
   );

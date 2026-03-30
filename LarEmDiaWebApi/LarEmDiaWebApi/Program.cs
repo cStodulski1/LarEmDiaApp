@@ -6,6 +6,8 @@ using LarEmDia.Application.Pessoas.BuscarPessoaPorId;
 using LarEmDia.Application.Pessoas.CadastrarPessoa;
 using LarEmDia.Application.Pessoas.ExcluirPessoa;
 using LarEmDia.Application.Pessoas.ListarPessoas;
+using LarEmDia.Application.Relatorios.ListaPessoasTotais;
+using LarEmDia.Application.Relatorios.PessoasTotalSumario;
 using LarEmDia.Application.Transacoes.CadastrarTransacao;
 using LarEmDia.Infrastructure.Data;
 using LarEmDia.Infrastructure.Interfaces;
@@ -38,6 +40,8 @@ builder.Services.AddMediatR(cfg =>
         .RegisterServicesFromAssembly(typeof(CadastrarCategoriaHandler).Assembly)
         .RegisterServicesFromAssembly(typeof(ListarCategoriaHandler).Assembly)
         .RegisterServicesFromAssembly(typeof(CadastrarTransacaoHandler).Assembly)
+        .RegisterServicesFromAssembly(typeof(PessoasTotalSumarioHandler).Assembly)
+        .RegisterServicesFromAssembly(typeof(ListarPessoasTotaisHandler).Assembly)
       );
 
 //aqui eu estabeleço a conexão com o banco de dados adicionando o dbContext

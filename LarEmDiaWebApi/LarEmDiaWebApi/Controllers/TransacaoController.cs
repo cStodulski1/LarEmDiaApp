@@ -14,13 +14,10 @@ namespace LarEmDiaWebApi.Controllers
         public async Task<IActionResult> Cadastrar([FromBody] CadastrarTransacaoRequest command)
         {
             var response = await _mediator.Send(command);
-            return Ok(response.Mensagem);
-        }
+            if(!response.EhSucesso)
+                return BadRequest(response.Mensagem);
 
-        [HttpGet]
-        public async Task<IActionResult> Listar()
-        {
-            return Ok("Listar transações - funcionalidade a ser implementada");
+            return Ok(response.Mensagem);
         }
     }
 }
